@@ -1,0 +1,236 @@
+:root {
+  --rose: #e8a0b0;
+  --blush: #f7d6df;
+  --deep: #c2607a;
+  --cream: #fff5f7;
+  --dark: #5a2535;
+  --petal: #f9e4ea;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--cream);
+  font-family: 'Lato', sans-serif;
+  color: var(--dark);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+
+.petals-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -40px;
+  font-size: 1.4rem;
+  animation: fall linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  0%   { transform: translateY(-40px) rotate(0deg); opacity: 0.7; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+  background: radial-gradient(ellipse at 60% 40%, #fce4ec88 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, #f8bbd088 0%, transparent 50%);
+}
+
+.hero-decoration {
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  animation: pulse 2.5s ease-in-out infinite;
+  margin-bottom: 1.5rem;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 8vw, 6rem);
+  color: var(--deep);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  animation: fadeUp 1s ease both;
+}
+
+.hero h1 span {
+  font-style: italic;
+  color: var(--rose);
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: #c2607aaa;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: fadeUp 1.2s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 0.6rem;
+  color: var(--rose);
+  margin: 2rem auto;
+  z-index: 1;
+  position: relative;
+}
+
+/* Counter */
+.counter-section {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #fff0f5, #fde8ee);
+  border-top: 1px solid #f5c6d0;
+  border-bottom: 1px solid #f5c6d0;
+}
+
+.counter-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #c2607aaa;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.counter-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  color: var(--deep);
+  line-height: 1;
+  font-weight: 700;
+  text-shadow: 2px 4px 12px #e8a0b055;
+}
+
+.counter-days {
+  font-size: 1rem;
+  color: var(--rose);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+
+.counter-date {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #c2607a88;
+  letter-spacing: 0.1em;
+}
+
+/* Letrax*/
+.letter-section {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.letter-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--deep);
+  margin-bottom: 2rem;
+}
+
+.letter-card {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  position: relative;
+}
+
+.letter-card p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #9b2d4a;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+.letter-card .highlight {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--deep);
+  display: block;
+  margin: 1.2rem 0;
+  text-align: center;
+}
+
+.letter-card .signature {
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--rose);
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+
+.letter-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #c2607a66;
+  text-align: right;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.85rem;
+  color: #c2607a88;
+  letter-spacing: 0.05em;
+}
+
+footer span { font-size: 1.1rem; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
